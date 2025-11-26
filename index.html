@@ -15,12 +15,13 @@
   <h1 class="autofit" id="domain2"></h1>
 
   <!-- Script đọc config.json và set domain + firework -->
-  <script>
+    <script>
     const CONFIG_URL = "config.json";
 
     async function applyConfig() {
       try {
-        const res = await fetch(CONFIG_URL, { cache: "no-cache" });
+        // Thêm query ?t=... để chống cache CDN/OBS
+        const res = await fetch(CONFIG_URL + "?t=" + Date.now(), { cache: "no-cache" });
         if (!res.ok) throw new Error("Không load được config.json");
         const cfg = await res.json();
 
@@ -37,7 +38,7 @@
         d1.textContent = domains[0] || "";
         d2.textContent = domains[1] || "";
 
-        // Set biến bật/tắt pháo hoa
+        // Set bật/tắt pháo hoa
         window.ENABLE_FIREWORK = cfg.enableFirework === true;
 
       } catch (e) {
@@ -50,9 +51,14 @@
       }
     }
 
-    // Gọi ngay sau khi DOM sinh xong 2 h1 (trước khi autofit.js chạy)
+    // Gọi ngay lần đầu
     applyConfig();
+
+    // Sau đó mỗi 10 giây đọc lại config.json một lần
+    // (có thể đổi 10000 thành 60000 nếu bạn chỉ cần 1 phút cập nhật 1 lần)
+    setInterval(applyConfig, 10000);
   </script>
+
 
   <!-- Chạy script Double Fullscreen -->
   <script src="js/fullscreen.js"></script> 
