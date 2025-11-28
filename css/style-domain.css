@@ -4,36 +4,38 @@ body {
     background: transparent; 
 }
 .moving-domain {
-  /* position: absolute; */
+  /* position: absolute;  (bạn bật lại nếu cần cho script chạy) */
   font-size: 45px;
-  /* font-weight: bold;
-  color: #ffcc00; */
   white-space: nowrap;
   pointer-events: none;
 
-  margin: 0;       
+  margin: 0;
   padding: 0;
-  line-height: 1;  
-    font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+  line-height: 1;
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
                "Segoe UI", sans-serif;
   font-weight: 700;
   letter-spacing: 2px;
 
-  /* Gradient vàng */
-  background: linear-gradient(180deg,
-    #fff7c7 0%,
-    #ffe38a 35%,
-    #ffc44a 60%,
-    #f7a62c 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  /* Fallback: nếu gradient không hoạt động vẫn là vàng */
+  color: #f5b722;
 
-  /* Viền + bóng + glow nhẹ */
-  -webkit-text-stroke: 1px rgba(255,255,255,0.5);
+  /* Gradient vàng đậm hơn */
+  background-image: linear-gradient(
+    180deg,
+    #fff4a8 0%,
+    #ffd54a 35%,
+    #f6a800 65%,
+    #d87a00 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;  /* để thấy gradient */
+
+  /* Viền + bóng + glow */
+  -webkit-text-stroke: 1px rgba(255,255,255,0.6);
   text-shadow:
-    0 0 10px rgba(255,255,255,0.8),   /* glow trắng quanh chữ */
-    0 4px 6px rgba(0,0,0,0.35),       /* bóng đổ phía dưới */
-    0 1px 0 rgba(255,255,255,0.9);    /* viền sáng trên cùng */;
+    0 0 6px rgba(255,255,255,0.8),      /* glow trắng */
+    0 0 18px rgba(240,170,0,0.9),       /* glow vàng */
+    0 6px 12px rgba(0,0,0,0.45);        /* bóng đổ dưới */;
 }
