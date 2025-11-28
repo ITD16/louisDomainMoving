@@ -7,7 +7,7 @@ body {
     background: transparent; 
 }
 .moving-domain .icon,
-.moving-domain .gold-text {
+.moving-domain  {
   display: inline-block;
   vertical-align: middle;  /* cho cân nhau theo chiều dọc */
 }
@@ -26,9 +26,9 @@ body {
                "Segoe UI", sans-serif;
   font-weight: 700;
   letter-spacing: 2px;
-
-
-  /* Hoạ tiết gradient vàng */
+}
+.gold-text{
+ /* Hoạ tiết gradient vàng */
   background: linear-gradient(
     90deg,
     #fffebe 0%,   /* sáng ở phía trên */
@@ -39,4 +39,5 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent; /* để thấy gradient */
+
 }
