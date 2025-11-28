@@ -22,7 +22,7 @@ body {
 .moving-domain .icon {
   display: inline-block;
   vertical-align: middle;
-  margin-right: 3px; /* cho đẹp, có thể bỏ */
+  /* margin-right: 3px;  */
   filter: none;      /* không dính shadow/gradient gì hết */
 }
 
