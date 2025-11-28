@@ -30,11 +30,14 @@ body {
 .gold-text{
  /* Hoạ tiết gradient vàng */
   background: linear-gradient(
-    90deg,
+    43deg,
     #fffebe 0%,   /* sáng ở phía trên */
-    #ffe98f 35%,
-    #ffc95b 65%,
-    #ffab3e 100%  /* cam vàng ở đáy */
+    #ffac3e 15%,
+    #fe9c36 20%,
+    #fffebe 40%,
+    #fe9c36 65%,
+    #fe9c36 75%,
+    #fffebe 100%  /* cam vàng ở đáy */
   );
   -webkit-background-clip: text;
   background-clip: text;
