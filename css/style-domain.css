@@ -4,7 +4,7 @@ body {
     background: transparent; 
 }
 .moving-domain {
-  /* position: absolute;  (bạn bật lại nếu cần cho script chạy) */
+  position: absolute;
   font-size: 45px;
   white-space: nowrap;
   pointer-events: none;
