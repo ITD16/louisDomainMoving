@@ -6,6 +6,13 @@ body {
     overflow: hidden; 
     background: transparent; 
 }
+.moving-domain .icon,
+.moving-domain .gold-text {
+  display: inline-block;
+  vertical-align: middle;  /* cho cân nhau theo chiều dọc */
+}
+
+
 .moving-domain {
   /* position: absolute;  // nếu script cần thì bật lại */
   font-size: 25px;
