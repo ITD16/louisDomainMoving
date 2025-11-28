@@ -11,11 +11,11 @@
   <canvas id="canvas"></canvas>
 
   <!-- Hai dòng domain, sẽ được gán text bằng JS -->
-  <h1 class="moving-domain" >
+  <h1 class="moving-domain" id="domain1move" >
     <span class="icon">✅</span>
     <span class="gold-text" id="domain1"></span>
   </h1>
-  <h1 class="moving-domain">
+  <h1 class="moving-domain" id="domain2move">
     <span>✅</span>
     <span class="gold-text" id="domain2"></span>
   </h1>
@@ -139,8 +139,8 @@
   // ====== Khởi động tất cả ======
   async function startAll() {
     // DOM đã có 2 thẻ h1 (vì script nằm cuối body)
-    domain1 = document.getElementById("domain1");
-    domain2 = document.getElementById("domain2");
+    domain1 = document.getElementById("domain1move");
+    domain2 = document.getElementById("domain2move");
 
     if (!domain1 || !domain2) {
       console.error("Không tìm thấy #domain1 hoặc #domain2 trong DOM");
