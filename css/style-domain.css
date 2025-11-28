@@ -32,11 +32,13 @@ body {
   background: linear-gradient(
     43deg,
     #fffebe 0%,   /* sáng ở phía trên */
-    #ffac3e 15%,
-    #fe9c36 20%,
-    #fffebe 40%,
-    #fe9c36 65%,
-    #fe9c36 75%,
+    #ffac3e 20%,
+    #fec65b 25%,
+    #fffebe 30%,
+    #fffebe 60%,
+    #fec65b 65%,
+    #fec65b 75%,
+    #fffebe 85%,
     #fffebe 100%  /* cam vàng ở đáy */
   );
   -webkit-background-clip: text;
