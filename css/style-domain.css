@@ -14,4 +14,29 @@ body {
   margin: 0;       
   padding: 0;
   line-height: 1;  
+    {
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+               "Segoe UI", sans-serif;
+  font-size: 80px;
+  font-weight: 700;
+  letter-spacing: 2px;
+
+  /* Gradient vàng */
+  background: linear-gradient(180deg,
+    #fff7c7 0%,
+    #ffe38a 35%,
+    #ffc44a 60%,
+    #f7a62c 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  /* Viền + bóng + glow nhẹ */
+  -webkit-text-stroke: 1px rgba(255,255,255,0.5);
+  text-shadow:
+    0 0 10px rgba(255,255,255,0.8),   /* glow trắng quanh chữ */
+    0 4px 6px rgba(0,0,0,0.35),       /* bóng đổ phía dưới */
+    0 1px 0 rgba(255,255,255,0.9);    /* viền sáng trên cùng */;
+}
 }
