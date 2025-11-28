@@ -5,7 +5,7 @@ body {
 }
 .moving-domain {
   position: absolute;
-  font-size: 38px;
+  font-size: 20px;
   white-space: nowrap;
   pointer-events: none;
 
