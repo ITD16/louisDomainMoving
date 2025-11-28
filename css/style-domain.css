@@ -8,7 +8,7 @@ body {
 }
 .moving-domain {
   /* position: absolute;  // nếu script cần thì bật lại */
-  font-size: 45px;
+  font-size: 25px;
   white-space: nowrap;
   pointer-events: none;
 
