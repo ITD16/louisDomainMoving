@@ -11,14 +11,8 @@
   <canvas id="canvas"></canvas>
 
   <!-- Hai dòng domain, sẽ được gán text bằng JS -->
-  <h1 class="moving-domain" id="domain1move" >
-    <span class="icon">✅</span>
-    <span class="gold-text" id="domain1"></span>
-  </h1>
-  <h1 class="moving-domain" id="domain2move">
-    <span>✅</span>
-    <span class="gold-text" id="domain2"></span>
-  </h1>
+  <h1 class="moving-domain"  id="domain1"></h1>
+  <h1 class="moving-domain"  id="domain2"></h1>
 
   <!-- Script đọc config.json và set domain + firework -->
       <!-- Script đọc config + moving text -->
@@ -46,8 +40,8 @@
 
       // Tên tiền tố 
       const textPrefix = "✅" 
-      if (domain1) domain1.textContent =  domains[0] || "";
-      if (domain2) domain2.textContent = domains[1] || "";
+      if (domain1) domain1.textContent = textPrefix + domains[0] || "";
+      if (domain2) domain2.textContent = textPrefix + domains[1] || "";
 
       // Bật/tắt pháo hoa
       window.ENABLE_FIREWORK = cfg.enableFirework === true;
@@ -139,8 +133,8 @@
   // ====== Khởi động tất cả ======
   async function startAll() {
     // DOM đã có 2 thẻ h1 (vì script nằm cuối body)
-    domain1 = document.getElementById("domain1move");
-    domain2 = document.getElementById("domain2move");
+    domain1 = document.getElementById("domain1");
+    domain2 = document.getElementById("domain2");
 
     if (!domain1 || !domain2) {
       console.error("Không tìm thấy #domain1 hoặc #domain2 trong DOM");
