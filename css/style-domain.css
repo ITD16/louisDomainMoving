@@ -24,8 +24,8 @@ body {
   color: #ffab3e;
 
   /* Hoạ tiết gradient vàng */
-  background-image: linear-gradient(
-    180deg,
+  background: linear-gradient(
+    90deg,
     #fffebe 0%,   /* sáng ở phía trên */
     #ffe98f 35%,
     #ffc95b 65%,
