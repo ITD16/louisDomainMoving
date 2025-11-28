@@ -4,7 +4,7 @@
 body { 
     margin: 0; 
     overflow: hidden; 
-    background: transparent; 
+    background: #404040; 
 }
 .moving-domain .icon,
 .moving-domain  {
@@ -14,7 +14,7 @@ body {
 
 
 .moving-domain {
-  /* position: absolute;  // nếu script cần thì bật lại */
+  position: absolute; 
   font-size: 25px;
   white-space: nowrap;
   pointer-events: none;
@@ -30,17 +30,21 @@ body {
 .gold-text{
  /* Hoạ tiết gradient vàng */
   background: linear-gradient(
-    43deg,
-    #fffebe 0%,   /* sáng ở phía trên */
+    55deg,
+    #fffebe 0%, 
+    #fffebe 10%,  /* sáng ở phía trên */
     #ffac3e 20%,
-    #fec65b 25%,
-    #fffebe 30%,
+    #ffac3e 25%,
+    #fec65b 33%,
+    #fffebe 50%,
     #fffebe 60%,
     #fec65b 65%,
-    #fec65b 75%,
-    #fffebe 85%,
-    #fffebe 100%  /* cam vàng ở đáy */
+    #ffac3e 75%,
+    #ffac3e 85%,
+    #ffac3e 100%  /* cam vàng ở đáy */
   );
+  filter: drop-shadow(0.5px 0.1px 1px #0d0d0d);
+  
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent; /* để thấy gradient */
