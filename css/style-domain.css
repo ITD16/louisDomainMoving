@@ -1,18 +1,10 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 body { 
-    margin: 0; 
-    overflow: hidden; 
-    background: #404040; 
-}
-.moving-domain .icon,
-.moving-domain  {
-  display: inline-block;
-  vertical-align: middle;  /* cho cân nhau theo chiều dọc */
+  margin: 0; 
+  overflow: hidden; 
+  background: #404040; 
 }
 
-
+/* H1 dùng để định vị & di chuyển, KHÔNG áp gradient ở đây */
 .moving-domain {
   position: absolute; 
   font-size: 25px;
@@ -23,14 +15,29 @@ body {
   padding: 0;
   line-height: 1;
   font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
-               "Segoe UI", sans-serif;
+              "Segoe UI", sans-serif;
+}
+
+/* Emoji */
+.moving-domain .icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 6px; /* cho đẹp, có thể bỏ */
+  filter: none;      /* không dính shadow/gradient gì hết */
+}
+
+/* CHỈ áp ефfect gradient cho chữ domain */
+.moving-domain .domain-text {
+  display: inline-block;
+  vertical-align: middle;
+
   font-weight: 700;
   letter-spacing: 2px;
-    /* Hoạ tiết gradient vàng */
+
   background: linear-gradient(
     55deg,
     #fffebe 0%, 
-    #fffebe 10%,  /* sáng ở phía trên */
+    #fffebe 10%,
     #ffac3e 20%,
     #ffac3e 25%,
     #fec65b 33%,
@@ -39,11 +46,10 @@ body {
     #fec65b 65%,
     #ffac3e 75%,
     #ffac3e 85%,
-    #ffac3e 100%  /* cam vàng ở đáy */
+    #ffac3e 100%
   );
   filter: drop-shadow(0.5px 0.1px 1px #0d0d0d);
-  
   -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-fill-color: transparent; /* để thấy gradient */
+  -webkit-text-fill-color: transparent;
 }
