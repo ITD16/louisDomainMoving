@@ -7,8 +7,8 @@ body {
     background: transparent; 
 }
 .moving-domain {
-  position: absolute;
-  font-size: 20px;
+  /* position: absolute;  // nếu script cần thì bật lại */
+  font-size: 45px;
   white-space: nowrap;
   pointer-events: none;
 
@@ -20,25 +20,18 @@ body {
   font-weight: 700;
   letter-spacing: 2px;
 
-  /* Fallback: nếu gradient không hoạt động vẫn là vàng */
-  color: #f5b722;
+  /* Fallback màu vàng nếu browser không hỗ trợ clip */
+  color: #ffab3e;
 
-  /* Gradient vàng đậm hơn */
+  /* Hoạ tiết gradient vàng */
   background-image: linear-gradient(
     180deg,
-    #fff4a8 0%,
-    #ffd54a 35%,
-    #f6a800 65%,
-    #d87a00 100%
+    #fffebe 0%,   /* sáng ở phía trên */
+    #ffe98f 35%,
+    #ffc95b 65%,
+    #ffab3e 100%  /* cam vàng ở đáy */
   );
-  background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;  /* để thấy gradient */
-
-  /* Viền + bóng + glow */
-  -webkit-text-stroke: 1px rgba(255,255,255,0.6);
-  text-shadow:
-    0 0 6px rgba(255,255,255,0.8),      /* glow trắng */
-    0 0 18px rgba(240,170,0,0.9),       /* glow vàng */
-    0 6px 12px rgba(0,0,0,0.45);        /* bóng đổ dưới */;
+  background-clip: text;
+  -webkit-text-fill-color: transparent; /* để thấy gradient */
 }
