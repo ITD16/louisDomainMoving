@@ -87,17 +87,24 @@ canvas {
   width: 100%;
   text-align: center;
   pointer-events: none;
-  overflow: hidden; /* chặn tràn */
+  overflow: hidden;
 }
 
 #clock-line {
-  display: inline-block;
-  max-width: 95vw;              /* ràng buộc theo màn hình */
-  white-space: nowrap;          /* luôn 1 dòng */
+  display: inline-flex;
+  align-items: center;
+  max-width: 95vw;
+  white-space: nowrap;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 600;
-  font-size: clamp(5rem, 4vw, 8rem); /* auto scale */
+  font-size: clamp(7rem, 4vw, 14rem);
   color: #ffffff;
   line-height: 1.2;
+}
+
+/* khoảng cách tương đương 1 tab */
+.clock-gap {
+  width: 1.5em;   /* ~ 1 tab thị giác */
+  flex-shrink: 0;
 }
 
