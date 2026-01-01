@@ -1,7 +1,6 @@
 function startFirework() {
 
     window.addEventListener("resize", resizeCanvas, false);
-    window.addEventListener("DOMContentLoaded", onLoad, false);
 
     window.requestAnimationFrame =
         window.requestAnimationFrame ||
@@ -16,9 +15,13 @@ function startFirework() {
 
     function onLoad() {
         canvas = document.getElementById("canvas");
+        if (!canvas) {
+            console.error("Canvas #canvas không tồn tại");
+            return;
+        }
         ctx = canvas.getContext("2d");
         resizeCanvas();
-        window.requestAnimationFrame(updateWorld);
+        requestAnimationFrame(updateWorld);
 
         setInterval(() => {
             createFirework(
@@ -53,7 +56,7 @@ function startFirework() {
 
     function paint() {
         ctx.globalCompositeOperation = 'source-over';
-        ctx.fillStyle = "rgba(0,0,0,0.1)";
+        ctx.fillStyle = "rgba(0,0,0,0.15)";
         ctx.fillRect(0, 0, w, h);
         ctx.globalCompositeOperation = 'lighter';
         particles.forEach(p => p.draw(ctx));
@@ -62,21 +65,21 @@ function startFirework() {
     function createFirework(x, y) {
         xPoint = x;
         yPoint = y;
-        var nFire = Math.random() * 50 + 100;
-        var c = `rgb(${~~(Math.random()*200+55)},${~~(Math.random()*200+55)},${~~(Math.random()*200+55)})`;
+        const nFire = Math.random() * 50 + 80;
+        const c = `rgb(${~~(Math.random()*200+55)},${~~(Math.random()*200+55)},${~~(Math.random()*200+55)})`;
         for (let i = 0; i < nFire; i++) {
-            let p = new Particle();
+            const p = new Particle();
             p.color = c;
             particles.push(p);
         }
     }
 
     function Particle() {
-        this.w = this.h = Math.random() * 4 + 1;
+        this.w = this.h = Math.random() * 3 + 1;
         this.x = xPoint;
         this.y = yPoint;
-        this.vx = (Math.random() - 0.5) * 10;
-        this.vy = (Math.random() - 0.5) * 10;
+        this.vx = (Math.random() - 0.5) * 8;
+        this.vy = (Math.random() - 0.5) * 8;
         this.alpha = Math.random() * .5 + .5;
     }
 
@@ -85,7 +88,7 @@ function startFirework() {
         this.x += this.vx;
         this.vy += this.gravity;
         this.y += this.vy;
-        this.alpha -= 0.01;
+        this.alpha -= 0.012;
         return this.alpha > 0;
     };
     Particle.prototype.draw = function (c) {
@@ -98,4 +101,7 @@ function startFirework() {
         c.fill();
         c.restore();
     };
+
+    // ⭐ GỌI NGAY
+    onLoad();
 }
