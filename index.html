@@ -13,9 +13,15 @@
   <!-- Hai dòng domain, sẽ được gán text bằng JS -->
   <h1 class="autofit" id="domain1"></h1>
   <h1 class="autofit" id="domain2"></h1>
+  <!-- Đồng hồ GMT+7 -->
+<div id="clock-container">
+  <div id="clock-time">--:--:--</div>
+  <div id="clock-date">--/--/----</div>
+</div>
+
   
   <script src="js/firework.js"></script>
-  <!-- Script đọc config.json và set domain + firework -->
+  <script src="js/oclock.js"></script>
     <script>
 const CONFIG_URL = "config.json";
 
