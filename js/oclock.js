@@ -1,9 +1,8 @@
 (function () {
-  const timeEl = document.getElementById("clock-time");
-  const dateEl = document.getElementById("clock-date");
+  const lineEl = document.getElementById("clock-line");
 
-  if (!timeEl || !dateEl) {
-    console.error("Clock elements not found");
+  if (!lineEl) {
+    console.error("clock-line not found");
     return;
   }
 
@@ -20,8 +19,8 @@
     const MM = String(gmt7.getMonth() + 1).padStart(2, "0");
     const yyyy = gmt7.getFullYear();
 
-    timeEl.textContent = `${hh}:${mm}:${ss}`;
-    dateEl.textContent = `${dd}/${MM}/${yyyy}`;
+    // Dùng dấu "-" ngăn cách
+    lineEl.textContent = `${hh}:${mm}:${ss} - ${dd}/${MM}/${yyyy}`;
   }
 
   updateClockGMT7();
