@@ -75,3 +75,29 @@ canvas {
   z-index: 0; /* thấp nhất */
   pointer-events: none; /* không chặn tương tác */
 }
+
+
+
+/* Xử lý đồng hồ */
+
+#clock-container {
+  position: fixed;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#clock-time {
+  font-size: 48px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.1;
+}
+
+#clock-date {
+  font-size: 20px;
+  color: rgba(255,255,255,0.8);
+}
+
