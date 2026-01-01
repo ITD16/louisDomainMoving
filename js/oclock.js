@@ -1,8 +1,9 @@
 (function () {
-  const lineEl = document.getElementById("clock-line");
+  const timeEl = document.getElementById("clock-time");
+  const dateEl = document.getElementById("clock-date");
 
-  if (!lineEl) {
-    console.error("clock-line not found");
+  if (!timeEl || !dateEl) {
+    console.error("Clock elements not found");
     return;
   }
 
@@ -19,7 +20,8 @@
     const MM = String(gmt7.getMonth() + 1).padStart(2, "0");
     const yyyy = gmt7.getFullYear();
 
-    lineEl.textContent = `${hh}:${mm}:${ss}  ${dd}/${MM}/${yyyy}`;
+    timeEl.textContent = `${hh}:${mm}:${ss}`;
+    dateEl.textContent = `${dd}/${MM}/${yyyy}`;
   }
 
   updateClockGMT7();
