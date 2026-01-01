@@ -13,12 +13,17 @@
   <!-- Hai dòng domain, sẽ được gán text bằng JS -->
   <h1 class="autofit" id="domain1"></h1>
   <h1 class="autofit" id="domain2"></h1>
-
+  
+  <script src="js/firework.js"></script>
   <!-- Script đọc config.json và set domain + firework -->
     <script>
     const CONFIG_URL = "config.json";
 
     async function applyConfig() {
+      if (cfg.enableFirework === true && !window._fireworkStarted) {
+            window._fireworkStarted = true;
+            startFirework();
+        }
       try {
         // Thêm query ?t=... để chống cache CDN/OBS
         const res = await fetch(CONFIG_URL + "?t=" + Date.now(), { cache: "no-cache" });
@@ -62,8 +67,7 @@
   <!-- Chạy script Double Fullscreen -->
   <script src="js/fullscreen.js"></script> 
   
-  <!-- Chạy script Pháo hoa (sử dụng window.ENABLE_FIREWORK đã set ở trên) -->
-  <script src="js/firework.js"></script>
+
 
   <!-- Tự động co chữ theo độ dài -->
   <script src="js/autofit.js" defer></script>
