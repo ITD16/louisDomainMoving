@@ -1,16 +1,13 @@
 (function () {
-  const timeEl = document.getElementById("clock-time");
-  const dateEl = document.getElementById("clock-date");
+  const lineEl = document.getElementById("clock-line");
 
-  if (!timeEl || !dateEl) {
-    console.error("Clock elements not found");
+  if (!lineEl) {
+    console.error("clock-line not found");
     return;
   }
 
   function updateClockGMT7() {
     const now = new Date();
-
-    // Chuyển sang GMT+7
     const utc = now.getTime() + now.getTimezoneOffset() * 60000;
     const gmt7 = new Date(utc + 7 * 60 * 60000);
 
@@ -22,8 +19,7 @@
     const MM = String(gmt7.getMonth() + 1).padStart(2, "0");
     const yyyy = gmt7.getFullYear();
 
-    timeEl.textContent = `${hh}:${mm}:${ss}`;
-    dateEl.textContent = `${dd}/${MM}/${yyyy}`;
+    lineEl.textContent = `${hh}:${mm}:${ss}  ${dd}/${MM}/${yyyy}`;
   }
 
   updateClockGMT7();
