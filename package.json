@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "netlify dev"
   },
   "repository": {
-    "type": "git",
+  "type": "git",
     "url": "git+https://github.com/ITD16/louisDomainMoving.git"
   },
   "keywords": [],
@@ -19,6 +20,8 @@
   },
   "homepage": "https://github.com/ITD16/louisDomainMoving#readme",
   "dependencies": {
-    "express": "^5.2.1"
+    "@netlify/functions": "^5.1.5",
+    "express": "^5.2.1",
+    "serverless-http": "^4.0.0"
   }
 }
