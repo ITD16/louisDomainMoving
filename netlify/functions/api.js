@@ -3,17 +3,8 @@ const serverless = require("serverless-http");
 
 const app = express();
 
-app.use(express.json());
-
 app.get("/", (req, res) => {
-  res.send("Express on Netlify is working");
-});
-
-app.get("/users", (req, res) => {
-  res.json([
-    { id: 1, name: "Adam" },
-    { id: 2, name: "John" }
-  ]);
+  res.send("Hello from Express on Netlify");
 });
 
 module.exports.handler = serverless(app);
